@@ -66,12 +66,15 @@
         nav {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 8px;
         }
 
         nav a {
             color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
             padding: 6px 16px;
             border-radius: 8px;
             font-size: 0.9em;
@@ -189,7 +192,7 @@
 
         <h2>Flight Data</h2>
         <div class="card">
-            <p>Flight price data is collected server-side and is not tied to your identity. Price information is used to identify deals and calculate historical averages for your routes.</p>
+            <p>Flight price data is collected server-side and is not tied to your identity. Price information is used to detect price drops and identify deals on your routes.</p>
         </div>
 
         <h2>Push Notifications</h2>

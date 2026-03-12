@@ -66,12 +66,15 @@
         nav {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 8px;
         }
 
         nav a {
             color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
             padding: 6px 16px;
             border-radius: 8px;
             font-size: 0.9em;
@@ -298,7 +301,7 @@
 
         <div class="card">
             <strong>What is FlightScout?</strong>
-            <p>FlightScout monitors flight prices on the routes you care about and alerts you when a deal drops significantly below the historical average — so you never miss a cheap flight.</p>
+            <p>FlightScout monitors flight prices on the routes you care about and alerts you when prices drop significantly — so you never miss a cheap flight.</p>
         </div>
 
         <div class="card">
@@ -308,7 +311,7 @@
 
         <div class="card">
             <strong>What counts as a "deal"?</strong>
-            <p>A deal is a flight price that's at least 30% below the historical average for that route. The bigger the drop, the better the deal — you'll see the exact percentage on each deal card.</p>
+            <p>A deal is a flight whose price has dropped significantly compared to what it cost recently. You'll see the exact dollar amount and percentage drop on each deal card.</p>
         </div>
 
         <h2>Search & dates</h2>
@@ -318,16 +321,11 @@
             <p>Instead of picking exact dates, you specify a travel window (e.g., anytime in June) and a trip duration (e.g., 5 nights). FlightScout searches across multiple departure dates within your window to find the cheapest combination.</p>
         </div>
 
-        <div class="card">
-            <strong>How often are prices checked?</strong>
-            <p>FlightScout checks your routes periodically in the background. You can also pull to refresh on the feed to trigger an on-demand search for the latest prices.</p>
-        </div>
-
         <h2>Alerts & notifications</h2>
 
         <div class="card">
             <strong>How do deal alerts work?</strong>
-            <p>When FlightScout finds a price that meets your alert threshold (default 30% below average), it sends you a push notification. You can customize the alert threshold per route in Settings.</p>
+            <p>When FlightScout detects a price drop that meets your alert threshold, it sends you a push notification. You can customize the alert threshold per route in Settings.</p>
         </div>
 
         <div class="card">
@@ -346,7 +344,7 @@
 
         <div class="card">
             <strong>My feed says "no deals found."</strong>
-            <p>This means current prices are close to or above the historical average for your routes. Keep your watch pairs active — you'll be notified as soon as a price drops into deal territory.</p>
+            <p>This means no significant price drops have been detected on your routes recently. Keep your watch pairs active — you'll be notified as soon as a price drops.</p>
         </div>
 
         <div class="card">
