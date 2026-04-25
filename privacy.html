@@ -127,6 +127,10 @@
             margin: 0;
         }
 
+        .card p + p {
+            margin-top: 0.8em;
+        }
+
         a {
             color: #38D2D2;
             text-decoration: none;
@@ -166,7 +170,7 @@
     <header>
         <img src="assets/AppIcon.png" alt="FlightScout app icon" class="app-icon">
         <h1>FlightScout</h1>
-        <p class="subtitle">Last updated: March 12, 2026</p>
+        <p class="subtitle">Last updated: April 25, 2026</p>
         <nav>
             <a href="support.html">Support</a>
             <a href="privacy.html" class="active">Privacy Policy</a>
@@ -177,42 +181,77 @@
     <main>
         <h2>Overview</h2>
         <div class="card">
-            <p>FlightScout is designed with your privacy in mind. We collect only the minimum data necessary to deliver flight deal alerts to you. We do not sell, share, or monetize your data in any way.</p>
+            <p>FlightScout collects only the data necessary to deliver flight deal alerts to you. We don't sell or share your personal data with advertisers. This policy describes what we collect, why we collect it, and which third-party services process it on our behalf.</p>
         </div>
 
-        <h2>Account & Authentication</h2>
+        <h2>Account &amp; Authentication</h2>
         <div class="card">
-            <p>When you first open FlightScout, an anonymous account is created automatically. No email, name, or personal information is required. Your account is identified by a randomly generated ID that cannot be traced back to you.</p>
+            <p>When you first open FlightScout, an anonymous account is created automatically using a randomly generated ID that can't be traced back to you. No email or name is required.</p>
+            <p>You may optionally sign in with Apple during onboarding. When you do, Apple shares a stable anonymized user ID with us (and optionally a private relay email address) which is used to associate your account with your Apple ID. You can review Apple's privacy practices at <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>.</p>
+            <p>You can delete your account at any time from the Settings screen inside the app. Deletion permanently removes your watch pairs, preferences, notification history, and device token from our servers.</p>
         </div>
 
         <h2>Data We Store</h2>
         <div class="card">
-            <p>To provide flight deal monitoring, we store your watch pairs (origin airport, destination airport, travel dates, and search preferences) on our servers. This data is associated with your anonymous account ID and is used solely to check flight prices and send you alerts.</p>
+            <p>To monitor flight prices and deliver alerts, we store the following data associated with your anonymous account ID:</p>
+            <p>- Watch pairs: origin airport, destination airport, travel dates, and trip preferences (budget range, trip duration, date flexibility, traveler type)</p>
+            <p>- Airline blocklist: any airlines you've chosen to exclude from results</p>
+            <p>- Notification history: a record of every push alert sent to you, including route, price, airline, travel dates, and a link to Google Flights. This record is retained until you delete individual notifications or your account.</p>
+            <p>- Device token: your APNs push token, used to deliver notifications (see Push Notifications section)</p>
         </div>
 
         <h2>Flight Data</h2>
         <div class="card">
-            <p>Flight price data is collected server-side and is not tied to your identity. Price information is used to detect price drops and identify deals on your routes.</p>
+            <p>Flight price data is collected server-side and is not tied to your identity. It's used solely to detect price drops and identify deals on your watched routes.</p>
         </div>
 
         <h2>Push Notifications</h2>
         <div class="card">
-            <p>If you enable push notifications, your device token is stored on our servers to deliver deal alerts via Apple Push Notification service (APNs). Device tokens are used exclusively for sending FlightScout notifications and are deleted if you disable notifications.</p>
+            <p>If you enable push notifications, your device token is stored on our servers to deliver deal alerts via Apple Push Notification service (APNs). Device tokens are used exclusively for sending FlightScout notifications and are deleted when you disable notifications or delete your account.</p>
+            <p>Push notifications contain flight deal data (route, price, airline, travel dates) and a deal reference ID used to navigate directly to the deal inside the app.</p>
         </div>
 
-        <h2>No Analytics or Tracking</h2>
+        <h2>Home Screen Widget</h2>
         <div class="card">
-            <p>We do not use any analytics, tracking, or advertising frameworks. There are no third-party SDKs that collect user data.</p>
+            <p>If you add the FlightScout widget to your home screen, it reads cached deal data from a shared app container on your device. The widget may also perform background reads from our servers using your anonymous account ID to refresh deal information. No additional data is collected by the widget beyond what the app already stores.</p>
+        </div>
+
+        <h2>Analytics</h2>
+        <div class="card">
+            <p>FlightScout uses <a href="https://posthog.com" target="_blank" rel="noopener">PostHog</a> for product analytics. PostHog helps us understand how the app is used so we can improve it. It is not used for advertising.</p>
+            <p>PostHog automatically collects device type, OS version, app version, and session data. We also send the following events:</p>
+            <p>- Onboarding step completions (step name and index)</p>
+            <p>- Home airport selection (IATA code and city)</p>
+            <p>- Watch pair creation (origin/destination airports, whether flexible dates are used)</p>
+            <p>- Notification permission outcome (granted or denied)</p>
+            <p>- Google Flights link opens (route and deal price)</p>
+            <p>- Push notification opens (deal ID)</p>
+            <p>- Sign in events (method used)</p>
+            <p>None of these events include your name, email, or any directly identifying information. You can review PostHog's privacy practices at <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a>.</p>
+        </div>
+
+        <h2>Third-Party Data Processors</h2>
+        <div class="card">
+            <p><strong style="color: rgba(255,255,255,0.8);">Supabase</strong> -- Our backend infrastructure runs on Supabase, which hosts our database and server-side functions. Your watch pairs, preferences, notification history, and device token are stored on Supabase's cloud infrastructure. Supabase is a data processor acting on our behalf. Review their privacy policy at <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.</p>
+            <p><strong style="color: rgba(255,255,255,0.8);">PostHog</strong> -- Analytics processor as described above. See <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a>.</p>
+            <p><strong style="color: rgba(255,255,255,0.8);">Apple</strong> -- Push notifications are delivered via APNs. In-app purchases and subscriptions are processed by Apple. If you use Sign in with Apple, Apple processes your authentication. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>.</p>
         </div>
 
         <h2>Data Retention</h2>
         <div class="card">
-            <p>Your watch pairs and preferences are retained as long as your account is active. Flight deal data is retained temporarily for price history analysis and automatically pruned over time.</p>
+            <p>Your watch pairs, preferences, and notification history are retained as long as your account is active. Flight price data used for deal detection is retained temporarily and automatically pruned over time. Notification history records persist until you delete them from the app or delete your account entirely.</p>
+        </div>
+
+        <h2>Your Rights (GDPR &amp; CCPA)</h2>
+        <div class="card">
+            <p>If you're in the European Union or California, you have the right to request access to the data we hold about you, request deletion of your data, and opt out of certain data processing.</p>
+            <p>You can delete all your data at any time by deleting your account from the Settings screen inside the app. For other data requests or questions, contact us at the email below. We'll respond within 30 days.</p>
+            <p>We process your data to provide the service you signed up for (contractual necessity under GDPR Article 6(1)(b)) and to improve the product (legitimate interest under Article 6(1)(f)).</p>
         </div>
 
         <h2>Children's Privacy</h2>
         <div class="card">
-            <p>We do not knowingly collect any information from children. The app does not require any personal information to function.</p>
+            <p>We don't knowingly collect any information from children under 13. The app doesn't require personal information to function.</p>
         </div>
 
         <h2>Changes to This Policy</h2>
@@ -222,7 +261,7 @@
 
         <h2>Contact</h2>
         <div class="card">
-            <p>Questions? Reach us at <span id="contact-email"></span></p>
+            <p>Questions about this policy or your data? Reach us at <span id="contact-email"></span></p>
         </div>
     </main>
 
